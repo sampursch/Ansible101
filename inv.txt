@@ -1,0 +1,19 @@
+[class]
+ansible101-1
+ansible101-2
+[class:vars]
+remote_user=ubuntu
+private_key_file = ~/.ssh/dell_key.pem
+
+[psc]
+r2cpscmgmt01.amer.dell.com
+r2cpscprod02.amer.dell.com
+pc1pscmgmt01.amer.dell.com
+pc1pscprod02.amer.dell.com
+s3bpscmgmt01.amer.dell.com
+s3bpscprod02.amer.dell.com
+durpscmgmt01.amer.dell.com
+durpscprod02.amer.dell.com
+[psc:vars]
+ansible_ssh_private_key_file=~/.ssh/id_rsa_vcsa
+ansible_user=root

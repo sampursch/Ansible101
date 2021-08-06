@@ -1,0 +1,19 @@
+#set up webservers
+---
+  - hosts: class
+    vars:
+      index_path: "/var/www/html/index.html"
+      html_message: "Hello from server1"
+
+    become: true
+    tasks:
+      - name: create new index.html file
+        lineinfile:
+          create: yes
+          path: "{{ index_path }}"
+          line: "<html>{{ html_message }}</html>"
+        notify: start apache
+
+    handlers:
+      - name: start apache
+        service: name=apache2 state=started

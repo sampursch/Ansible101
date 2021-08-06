@@ -1,0 +1,10 @@
+#setup webservers
+---
+  - hosts: class
+    become: true
+    tasks:
+      - name: update all packages to the latest
+        apt: 
+          name: all
+          state: latest
+    gather_facts: no

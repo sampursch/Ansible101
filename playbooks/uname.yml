@@ -1,0 +1,13 @@
+#uname playbook
+---
+  - hosts: class 
+    gather_facts: no
+
+    tasks:
+      - name: get the OS of each host
+        shell: uname -a
+        changed_when: False
+
+      - name: print a message
+        debug:
+          msg: "hello!"

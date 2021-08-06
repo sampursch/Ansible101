@@ -1,0 +1,8 @@
+#complex
+---
+  - hosts: class
+    vars:
+      addresses: [address1, address2, address3]
+    tasks:
+      - name:blah
+        line:

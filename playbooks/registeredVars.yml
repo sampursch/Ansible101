@@ -1,0 +1,15 @@
+#registered variables example
+---
+  - hosts: local
+    vars:
+      playbooks_location: "file location"
+
+    tasks:
+      - name: get the list of all playbooks containing the word 'apache'
+        shell: "ls {{ playbooks_location }} | grep apache"
+        register: playbooks_with_apache
+
+      - name: list out all playbooks containint apache
+        debug:
+          msg: "{{ playbooks_with_apache.stdout_lines }}"
+  

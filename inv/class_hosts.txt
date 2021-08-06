@@ -1,0 +1,10 @@
+#class hosts
+
+[webservers]
+server1 ansible_host=18.222.151.148
+
+[bastions]
+server2 ansible_host=18.119.156.100
+
+[local]
+control ansible_connection=local
